@@ -4,7 +4,7 @@
  * @copyright Copyright (C) 2023
  * @date 2023-2-18
  * @brief libplatform
- * @version 1.0.0
+ * @version 1.0.1
  * @see https://sourceforge.net/p/predef/wiki/Home/
  * @link https://github.com/ChenPi12/libplatform.git
  */

@@ -31,6 +31,8 @@
 #define __has_ecos__ 0
 /*no EMX Environment*/
 #define __has_emx__ 0
+/*no Haiku*/
+#define __has_haiku__ 0
 /*no HI-UX MPP*/
 #define __has_hiux_mpp__ 0
 /*no HP-US*/
@@ -191,6 +193,10 @@
 #undef __has_emx__
 /*has EMX Environment*/
 #define __has_emx__ 1
+#endif
+#if defined(__HAIKU__)
+/*has Haiku*/
+#define __has_haiku__ 1
 #endif
 #if defined(__hiuxmpp)
 #undef __has_hiux_mpp__
