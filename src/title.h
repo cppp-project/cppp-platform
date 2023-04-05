@@ -1,3 +1,15 @@
+/**
+ * @file libplat.h
+ * @author ChenPi11
+ * @copyright Copyright (C) 2023
+ * @date 2023-2-18
+ * @brief libplatform
+ * @version 1.0.1
+ * @see https://sourceforge.net/p/predef/wiki/Home/
+ * @link https://github.com/ChenPi12/libplatform.git
+ */
+/*
+The Unlicense
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
@@ -22,3 +34,6 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org>
+*/
+#ifndef _INC_LIB_PLATFORM_H_
+#define _INC_LIB_PLATFORM_H_

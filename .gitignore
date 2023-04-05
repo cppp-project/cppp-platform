@@ -1,4 +1,7 @@
+# libplatform .gitignore
 # Build output dir
 build/
 # Editor config
 .vscode/
+# Makefile install data
+install.list
