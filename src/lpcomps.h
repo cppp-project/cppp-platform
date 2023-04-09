@@ -2,7 +2,7 @@
 /*libplatform compilers*/
 
 /*ACC*/
-#define __has_acc__ 0
+#define __has_acc_compiler__ 0
 /*Altium MicroBlaze C*/
 #define __has_has_altium_microblaze_c_compiler__ 0
 /*Altium C-to-Hardware*/
@@ -145,9 +145,9 @@
 #define __has_zortech_compiler__ 0
 
 #if defined(_ACC_)
-#undef __has_acc__
+#undef __has_acc_compiler__
 /*ACC*/
-#define __has_acc__ 1
+#define __has_acc_compiler__ 1
 #endif
 #if defined(__CMB__)
 #undef __has_has_altium_microblaze_c_compiler__

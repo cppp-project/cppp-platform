@@ -14,7 +14,7 @@ extern "C" {
 /*STD C18/C17*/
 #define __stdc_c18__ 201710L
 
-#define __has_c89__ 1
+/*#define __has_c89__ 1*/
 
 #ifdef __STDC_VERSION__
 #define __has_c94__ 1
@@ -27,6 +27,9 @@ extern "C" {
 #define __has_c11__ 0
 #define __has_c18__ 0
 #endif
+
+/*Usually C18 means C17*/
+#define __has_c17__ __has_c18__
 
 #ifdef __cplusplus
 }

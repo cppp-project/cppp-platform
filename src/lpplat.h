@@ -119,6 +119,7 @@
 #define __has_windu__ 0
 /*no z/OS*/
 #define __has_zos__ 0
+
 #if defined(_AIX) || defined(__TOS_AIX__)
 #undef __has_aix__
 /*has AIX*/
