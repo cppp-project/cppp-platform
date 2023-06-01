@@ -1,12 +1,12 @@
 /**
- * @file libplat.h
+ * @file libplatform.h
  * @author ChenPi11
  * @copyright Copyright (C) 2023
- * @date 2023-2-18
- * @brief libplatform
- * @version 1.0.1
+ * @date 2023-6-1
+ * @brief libplatform platform predefined detection.
+ * @version @PACKAGE_VERSION@
  * @see https://sourceforge.net/p/predef/wiki/Home/
- * @link https://github.com/ChenPi12/libplatform.git
+ * @link https://github.com/cppp-project/libplatform.git
  */
 /*
 The Unlicense
@@ -35,5 +35,10 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <https://unlicense.org>
 */
-#ifndef _INC_LIB_PLATFORM_H_
-#define _INC_LIB_PLATFORM_H_
+#ifndef _LIBPLATFORM_H_
+#define _LIBPLATFORM_H_
+@ARCHITECTURES@
+@COMPILERS@
+@LANGUAGESTANDARDS@
+@PLATFORMS@
+#endif

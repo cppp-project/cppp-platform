@@ -1,6 +1,6 @@
 # Compilers
 ## Source
-src/lpcomps.h
+include/platform_predef/compilers.h
 ## Content
 ## \_\_has_xxx_compiler\_\_
 #### Type
@@ -12,7 +12,7 @@ The 'xxx' here refers to the compiler name, and details can be found in the 'src
 **Note: An environment may contain multiple compiler environments**
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/libplatform.h>
 #if __has_msvc_compiler__
 #error "You are compile with MSVC!"
 #endif

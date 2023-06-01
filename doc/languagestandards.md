@@ -1,6 +1,6 @@
 # C/C++ Standards
 ## Source
-src/lpstds.h
+include/platform_predef/languagestandards.h
 ## Content
 ## \_\_has_cXX\_\_
 #### Type
@@ -22,7 +22,7 @@ macros
 The 'XX' here refers to the C++ standard, and details can be found in the 'src/lpstds.h' source code.
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/libplatform.h>
 #if __has_cpp17__
 #pragma message "You are in C++17."
 #endif

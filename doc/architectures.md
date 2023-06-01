@@ -1,6 +1,6 @@
 # Architectures
 ## Source
-src/lparchs.h
+include/platform_predef/architectures.h
 ## Content
 ### \_\_arch\_\_
 #### Type
@@ -84,7 +84,7 @@ This represents the calculation formula for pointer length
 The value is generally 32 or 64
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/libplatform.h>
 #include <stdio.h>
 int main()
 {

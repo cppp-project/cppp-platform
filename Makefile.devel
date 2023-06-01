@@ -1,0 +1,17 @@
+# -*- makefile -*-
+# This is the developer's makefile.
+
+AUTOCONF = autoconf
+ACLOCAL = aclocal
+
+CONFIGURES = configure
+CONFIGURES_IN = configure.ac
+AUTOCONF_FILES = aclocal.m4 $(wildcard m4/*.m4)
+
+all : aclocal.m4 configure
+
+aclocal.m4 : $(CONFIGURES_IN) $(wildcard m4/*.m4)
+	$(ACLOCAL) -I m4 --output=$@ && touch $@ && $(RM) -rf autom4te.cache
+
+configure : configure.ac $(AUTOCONF_FILES)
+	$(AUTOCONF) && $(RM) -rf autom4te.cache

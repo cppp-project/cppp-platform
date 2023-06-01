@@ -1,6 +1,6 @@
 # Platforms
 ## Source
-src/lpcomps.h
+include/platform_predef/platforms.h
 ## Content
 ## \_\_has_xxx\_\_
 #### Type
@@ -12,7 +12,7 @@ The 'xxx' here refers to the OS name, and details can be found in the 'src/lppla
 **Note: An environment may contain multiple OS environments**
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/libplatform.h>
 #if __has_windows__
 #error "You are compile in Windows!"
 #endif

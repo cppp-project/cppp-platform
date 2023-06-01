@@ -1,43 +1,43 @@
-/*=============================================================================================*/
-/*libplatform archs*/
+/* ============================================================================================= */
+/* Libplatform architecture detection. */
 
-/*Alpha*/
+/* Alpha */
 #define __arch_alpha__ 1
-/*x86*/
+/* x86 */
 #define __arch_x86__ 2
-/*ARM*/
+/* ARM */
 #define __arch_arm__ 3
-/*Blackfin*/
+/* Blackfin */
 #define __arch_blackfin__ 4
-/*Convex*/
+/* Convex */
 #define __arch_convex__ 5
-/*Epiphany*/
+/* Epiphany */
 #define __arch_epiphany__ 6
-/*HP/PA RISC*/
+/* HP/PA RISC */
 #define __arch_hppa__ 7
-/*Itanium*/
+/* Itanium */
 #define __arch_itanium__ 8
-/*Motorola 68k*/
+/* Motorola 68k */
 #define __arch_motorola68k__ 9
-/*MIPS*/
+/* MIPS */
 #define __arch_mips__ 10
-/*PowerPC*/
+/* PowerPC */
 #define __arch_ppc__ 11
-/*Pyramid 9810*/
+/* Pyramid 9810 */
 #define __arch_pyramid9810__ 12
-/*RS/6000*/
+/* RS/6000 */
 #define __arch_rs6000__ 13
-/*SPARC*/
+/* SPARC */
 #define __arch_sparc__ 14
-/*SuperH*/
+/* SuperH */
 #define __arch_superh__ 15
-/*SystemZ*/
+/* SystemZ */
 #define __arch_systemz__ 16
-/*TMS320*/
+/* TMS320 */
 #define __arch_tms320__ 17
-/*TMS470*/
+/* TMS470 */
 #define __arch_tms470__ 18
-/*unknown arch*/
+/* unknown arch */
 #define __arch_unknown__ 0
 
 #define __arch__ __arch_unknown__
@@ -165,8 +165,8 @@
 #endif
 
 #ifndef __POINTER_WIDTH__
-/*pointer width 64/32/16...*/
+/* pointer width 64/32/16... */
 #define __POINTER_WIDTH__ (long)(sizeof(void*) * 8)
 #endif
-/*Fix amd64 and 8086 bug*/
+/* Fix amd64 and 8086 bug */
 #undef __lp_amd64_flag
