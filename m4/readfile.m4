@@ -1,5 +1,5 @@
 # readfile.m4
-dnl Copyright (C) 2023 ChenPi11.
+dnl Copyright (C) 2023 The C++ Plus Project.
 dnl This file is free software; The C++ Plus Project
 dnl gives unlimited permission to copy and/or distribute it,
 dnl with or without modifications, as long as this notice is preserved.
