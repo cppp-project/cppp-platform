@@ -1,57 +1,39 @@
 # Architectures
 ## Source
-include/platform_predef/architectures.h
+src/architectures.h
 ## Content
 ### \_\_arch\_\_
 #### Type
-macro
+macros
 #### Description
 Represents the processor architecture type
 If the judgment fails, the value is '\_\_arch_unknown\_\_'
-##### We provide preset architecture types
-```c
-/*Alpha*/
-#define __arch_alpha__ 1
-/*x86*/
-#define __arch_x86__ 2
-/*ARM*/
-#define __arch_arm__ 3
-/*Blackfin*/
-#define __arch_blackfin__ 4
-/*Convex*/
-#define __arch_convex__ 5
-/*Epiphany*/
-#define __arch_epiphany__ 6
-/*HP/PA RISC*/
-#define __arch_hppa__ 7
-/*Itanium*/
-#define __arch_itanium__ 8
-/*Motorola 68k*/
-#define __arch_motorola68k__ 9
-/*MIPS*/
-#define __arch_mips__ 10
-/*PowerPC*/
-#define __arch_ppc__ 11
-/*Pyramid 9810*/
-#define __arch_pyramid9810__ 12
-/*RS/6000*/
-#define __arch_rs6000__ 13
-/*SPARC*/
-#define __arch_sparc__ 14
-/*SuperH*/
-#define __arch_superh__ 15
-/*SystemZ*/
-#define __arch_systemz__ 16
-/*TMS320*/
-#define __arch_tms320__ 17
-/*TMS470*/
-#define __arch_tms470__ 18
-/*unknown arch*/
-#define __arch_unknown__ 0
-```
+#### We provide preset architecture macros
+| Architecture | Macro |
+| :----: | :----: |
+| Alpha | \_\_arch_alpha\_\_ |
+| x86 | \_\_arch_x86\_\_ |
+| ARM | \_\_arch_arm\_\_ |
+| Blackfin | \_\_arch_blackfin\_\_ |
+| Convex | \_\_arch_convex\_\_ |
+| Epiphany | \_\_arch_epiphany\_\_ |
+| HP/PA RISC | \_\_arch_hppa\_\_ |
+| Itanium | \_\_arch_itanium\_\_ |
+| Motorola8k | \_\_arch_motorola68k\_\_ |
+| MIPS | \_\_arch_mips\_\_0 |
+| PowerPC | \_\_arch_ppc\_\_1 |
+| Pyramid810 | \_\_arch_pyramid9810\_\_2 |
+| RS/6000 | \_\_arch_rs6000\_\_3 |
+| SPARC | \_\_arch_sparc\_\_4 |
+| SuperH | \_\_arch_superh\_\_5 |
+| SystemZ | \_\_arch_systemz\_\_6 |
+| TMS320 | \_\_arch_tms320\_\_7 |
+| TMS470 | \_\_arch_tms470\_\_8 |
+| Unknown architecture | \_\_arch_unknown\_\_ |
+
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/cppp-platform.h>
 #if (__arch__ == __arch_x86__)
 #pragma message "Build in x86 arch"
 #elif (__arch__ == __arch_arm__)
@@ -69,7 +51,7 @@ Architecture name, like 'uname -m'
 If the judgment fails, the value is "unknown"
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/cppp-platform.h>
 #include <stdio.h>
 int main()
 {
@@ -84,7 +66,7 @@ This represents the calculation formula for pointer length
 The value is generally 32 or 64
 #### Usage
 ```c
-#include <cppp/libplatform.h>
+#include <cppp/cppp-platform.h>
 #include <stdio.h>
 int main()
 {

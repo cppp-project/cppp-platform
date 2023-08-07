@@ -34,7 +34,7 @@
 #define __arch_tms320__ 17
 /* TMS470 */
 #define __arch_tms470__ 18
-/* unknown arch */
+/* Unknown architectures */
 #define __arch_unknown__ 0
 
 #define __arch__ __arch_unknown__
