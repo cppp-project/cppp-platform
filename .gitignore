@@ -1,23 +1,40 @@
-# Libplatform's gitignore
-
-# Build output directory
+# CMake build files
 build/
-
-# Editor profile directory
-.vscode/
-
-# Autoconf temps
-autom4te.cache/
-aclocal.m4
-configure
-
-# Configure outputs
-config.log
-config.status
-
-# Build outputs
-include/libplatform.h
+CMakeFiles
+*.so
+*.so.*.*.*
+*.a
+*.dylib
+*.stackdump
+*.lib
+*.pdb
+*.dll
+*.exe
+cmake_install.cmake
+CMakeCache.txt
+CTestTestfile.cmake
+DartConfiguration.tcl
 Makefile
+uninstall.cmake
+CTestCostData.txt
+*.inst
+Testing
+*.log
+*.dSYM
 
-# Dist directory
-libplatform-*
+# Patterns for all subdirectories: all kinds of automatic backup files.
+*.orig
+*.rej
+*~
+*.kate-swp
+*.swp
+.#*
+\#*#
+.vscode
+
+# Autopull modules
+build-aux
+
+# Dist directory and temps
+cppp-platform-v*
+__pycache__

@@ -1,6 +1,3 @@
-/* ============================================================================================= */
-/* Libplatform architecture detection. */
-
 /* Alpha */
 #define __arch_alpha__ 1
 /* x86 */
@@ -165,7 +162,7 @@
 #endif
 
 #ifndef __POINTER_WIDTH__
-/* pointer width 64/32/16... */
+/* Pointer width 64/32/16... */
 #define __POINTER_WIDTH__ (long)(sizeof(void*) * 8)
 #endif
 /* Fix amd64 and 8086 bug */

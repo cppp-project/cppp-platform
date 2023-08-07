@@ -1,6 +1,3 @@
-/* ============================================================================================= */
-/* Libplatform compilers detection. */
-
 /* ACC */
 #define __has_acc_compiler__ 0
 /* Altium MicroBlaze C */
