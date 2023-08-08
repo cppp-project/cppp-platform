@@ -1,6 +1,7 @@
 2023-08-08  ChenPi11  <wushengwuxi-msctinoulk@outlook.com>
 
     Add CMake buildsystem support.
+    Add submodule 'build-aux'.
 
 2023-08-07  ChenPi11  <wushengwuxi-msctinoulk@outlook.com>
 
