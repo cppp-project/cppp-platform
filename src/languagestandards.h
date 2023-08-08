@@ -19,7 +19,7 @@
 #define __has_c18__ 0
 #endif
 
-/* Usually C17 means C18 */
+/* Usually C17 means C18. */
 #define __has_c17__ __has_c18__
 
 /* C++98 */

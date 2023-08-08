@@ -1,0 +1,96 @@
+# C++ Plus NLS Util language map for cppp-platform.
+# en_US
+
+'''
+/* Copyright (C) 2023 The C++ Plus Project
+   This file is part of the cppp-platform library.
+
+   The cppp-platform library is free software; you can redistribute it
+   and/or modify it under the terms of the The Unlicense as published
+   by the unlicense.org
+
+   The cppp-platform library is distributed in the hope that it will be
+   useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the The
+   Unlicense for more details.
+
+   You should have received a copy of the The Unlicense along with the
+   cppp-platform library; see the file COPYING.
+   If not, see <http://unlicense.org/>.  */
+'''
+/* Copyright (C) 2023 The C++ Plus Project
+   This file is part of the cppp-platform library.
+
+   The cppp-platform library is free software; you can redistribute it
+   and/or modify it under the terms of the The Unlicense as published
+   by the unlicense.org
+
+   The cppp-platform library is distributed in the hope that it will be
+   useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the The
+   Unlicense for more details.
+
+   You should have received a copy of the The Unlicense along with the
+   cppp-platform library; see the file COPYING.
+   If not, see <http://unlicense.org/>.  */
+'''
+
+'''
+/* Architectures detection. */
+'''
+/* Architectures detection. */
+'''
+
+'''
+/* Fix amd64 and 8086 bug */
+'''
+/* Fix amd64 and 8086 bug */
+'''
+
+'''
+/* Compilers detection. */
+'''
+/* Compilers detection. */
+'''
+
+'''
+/* C/C++ standards detection. */
+'''
+/* C/C++ standards detection. */
+'''
+
+'''
+/* Platforms detection. */
+'''
+/* Platforms detection. */
+'''
+
+'''
+/* Unknown architectures */
+'''
+/* Unknown architectures */
+'''
+
+'''
+/* Usually C17 means C18. */
+'''
+/* Usually C17 means C18. */
+'''
+
+'''
+/* C++ predefines */
+'''
+/* C++ predefines */
+'''
+
+'''
+/* Fix MSVC++ __cplusplus's feature. */
+'''
+/* Fix MSVC++ __cplusplus's feature. */
+'''
+
+'''
+/* C++ version */
+'''
+/* C++ version */
+'''

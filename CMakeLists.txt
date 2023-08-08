@@ -43,6 +43,9 @@ file(READ "${srcdir}/src/platforms.h" PLATFORMS)
 # Genetate header
 configure_file("${srcdir}/include/cppp/cppp-platform.h.in" "${output_includedir}/cppp/cppp-platform.h")
 
+# Generate header file for install
+cppp_nls_autotranslate("${output_includedir}/cppp/cppp-platform.h" "${srcdir}/lang")
+
 # Install
 # Includes
 # PERMISSIONS 0644

@@ -2,6 +2,7 @@
 
     Add CMake buildsystem support.
     Add submodule 'build-aux'.
+    Add NLS Language Map.
 
 2023-08-07  ChenPi11  <wushengwuxi-msctinoulk@outlook.com>
 
