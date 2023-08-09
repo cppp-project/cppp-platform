@@ -1,4 +1,4 @@
-# Libplatform User Manual
+# cppp-platform Manual
 [Architectures](./architectures.md)
 
 [Compilers](./compilers.md)

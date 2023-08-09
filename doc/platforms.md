@@ -12,7 +12,7 @@ The 'xxx' here refers to the OS name, and details can be found in the 'src/platf
 **Note: An compile environment may contain multiple environments**
 #### Usage
 ```c
-#include <cppp/libplatform.h>
+#include <cppp/cppp-platform.h>
 #if __has_windows__
 #error "We do not support Windows!"
 #endif
