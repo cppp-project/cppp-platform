@@ -1,7 +1,41 @@
-# libplatform .gitignore
-# Build output dir
+# CMake build files
 build/
-# Editor config
-.vscode/
-# Makefile install data
-install.list
+CMakeFiles
+*.so
+*.so.*.*.*
+*.a
+*.dylib
+*.stackdump
+*.lib
+*.pdb
+*.dll
+*.exe
+cmake_install.cmake
+CMakeCache.txt
+CTestTestfile.cmake
+DartConfiguration.tcl
+Makefile
+uninstall.cmake
+CTestCostData.txt
+*.inst
+Testing
+*.log
+*.dSYM
+
+# Patterns for all subdirectories: all kinds of automatic backup files.
+*.orig
+*.rej
+*~
+*.kate-swp
+*.swp
+.#*
+\#*#
+.vscode
+.cache
+
+# Autopull modules
+build-aux
+
+# Dist directory and temps
+cppp-platform-v*
+__pycache__

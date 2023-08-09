@@ -1,414 +1,411 @@
-/*=============================================================================================*/
-/*libplatform platforms*/
-
-/*no AIX*/
+/* No AIX */
 #define __has_aix__ 0
-/*no Android*/
+/* No Android */
 #define __has_android__ 0
-/*no Amdahl UTS*/
+/* No Amdahl UTS */
 #define __has_amdahl_uts__ 0
-/*no AmigaOS*/
+/* No AmigaOS */
 #define __has_amiga__ 0
-/*no Apollo AEGIS*/
+/* No Apollo AEGIS */
 #define __has_aegis__ 0
-/*no Apollo Domain/OS*/
+/* No Apollo Domain/OS */
 #define __has_apollo__ 0
-/*no BeOS*/
+/* No BeOS */
 #define __has_beos__ 0
-/*no Blue Gene*/
+/* No Blue Gene */
 #define __has_blue_gene__ 0
-/*no BSD*/
+/* No BSD */
 #define __has_bsd__ 0
-/*no ConvexOS*/
+/* No ConvexOS */
 #define __has_convex__ 0
-/*no Cygwin Environment*/
+/* No Cygwin Environment */
 #define __has_cygwin__ 0
-/*no DG/UX*/
+/* No DG/UX */
 #define __has_dgux__ 0
-/*no DYNIX/ptx*/
+/* No DYNIX/ptx */
 #define __has_dynix_ptx__ 0
-/*no eCos*/
+/* No eCos */
 #define __has_ecos__ 0
-/*no EMX Environment*/
+/* No EMX Environment */
 #define __has_emx__ 0
-/*no Haiku*/
+/* No Haiku */
 #define __has_haiku__ 0
-/*no HI-UX MPP*/
+/* No HI-UX MPP */
 #define __has_hiux_mpp__ 0
-/*no HP-US*/
+/* No HP-US */
 #define __has_hpux__ 0
-/*no IBM OS/400*/
+/* No IBM OS/400 */
 #define __has_os_400__ 0
-/*no INTEGRITY*/
+/* No INTEGRITY */
 #define __has_integrity__ 0
-/*no Interix Environment*/
+/* No Interix Environment */
 #define __has_interix__ 0
-/*no IRIX*/
+/* No IRIX */
 #define __has_irix__ 0
-/*no Linux*/
+/* No Linux */
 #define __has_linux__ 0
-/*no LynxOS*/
+/* No LynxOS */
 #define __has_lunx__ 0
-/*no MacOS*/
+/* No MacOS */
 #define __has_mac_os__ 0
-/*no Microware OS-9*/
+/* No Microware OS-9 */
 #define __has_microware_os_9__ 0
-/*no MINIX*/
+/* No MINIX */
 #define __has_minix__ 0
-/*no MinGW*/
+/* No MinGW */
 #define __has_mingw__ 0
-/*no MorphOS*/
+/* No MorphOS */
 #define __has_morph_os__ 0
-/*no MPE/iX*/
+/* No MPE/iX */
 #define __has_mpe_ix__ 0
-/*no MSDOS (C++ Plus C unsupport platform)*/
+/* No MSDOS (C++ Plus C unsupport platform) */
 #define __has_dos__ 0
-/*no NonStop*/
+/* No NonStop */
 #define __has_non_stop__ 0
-/*no Nucleus RTOS*/
+/* No Nucleus RTOS */
 #define __has_nucleus__ 0
-/*no OS/2*/
+/* No OS/2 */
 #define __has_os2__ 0
-/*no Palm OS*/
+/* No Palm OS */
 #define __has_palmos__ 0
-/*no EPLAN9*/
+/* No EPLAN9 */
 #define __has_eplan9__ 0
-/*no Pyramid DC/OSx*/
+/* No Pyramid DC/OSx */
 #define __has_pyr__ 0
-/*no QNX*/
+/* No QNX */
 #define __has_qnx__ 0
-/*no Reliant UNIX*/
+/* No Reliant UNIX */
 #define __has_reliant_unix__ 0
-/*no sun*/
+/* No sun */
 #define __has_sun__ 0
-/*no Solaris*/
+/* No Solaris */
 #define __has_solaris__ 0
-/*no SunOS*/
+/* No SunOS */
 #define __has_sunos__ 0
-/*no Stratus VOS*/
+/* No Stratus VOS */
 #define __has_vos__ 0
-/*no SVR4 Environment*/
+/* No SVR4 Environment */
 #define __has_svr4__ 0
-/*no Syllable*/
+/* No Syllable */
 #define __has_syllable__ 0
-/*no Symbian OS*/
+/* No Symbian OS */
 #define __has_symbianos__ 0
-/*no OSF/1*/
+/* No OSF/1 */
 #define __has_ofs1__ 0
-/*no Ultrix*/
+/* No Ultrix */
 #define __has_ultrix__ 0
-/*no UNICOS*/
+/* No UNICOS */
 #define __has_unicos__ 0
-/*no UNICOS/mp*/
+/* No UNICOS/mp */
 #define __has_unicos_mp__ 0
-/*no UNIX Enviroment*/
+/* No UNIX Enviroment */
 #define __has_unix__ 0
-/*no UnixWare*/
+/* No UnixWare */
 #define __has_unix_ware__ 0
-/*no U/Win Environment*/
+/* No U/Win Environment */
 #define __has_uwin__ 0
-/*no VMS*/
+/* No VMS */
 #define __has_vms__ 0
-/*no VxWorks*/
+/* No VxWorks */
 #define __has_vxworks__ 0
-/*no Windows*/
+/* No Windows */
 #define __has_windows__ 0
-/*no Windows CE*/
+/* No Windows CE */
 #define __has_windows_ce__ 0
-/*no Wind/U Environment*/
+/* No Wind/U Environment */
 #define __has_windu__ 0
-/*no z/OS*/
+/* No z/OS */
 #define __has_zos__ 0
 
 #if defined(_AIX) || defined(__TOS_AIX__)
 #undef __has_aix__
-/*has AIX*/
+/* Has AIX */
 #define __has_aix__ 1
 #endif
 #if defined(_ANDROID_)
 #undef __has_android__
-/*has Android*/
+/* Has Android */
 #define __has_android__ 1
 #endif
 #if defined(UTS)
 #undef __has_amdahl_uts__
-/*has Amdahl UTS*/
+/* Has Amdahl UTS */
 #define __has_amdahl_uts__ 1
 #endif
 #if defined(AMIGA) || defined(__amigaos__)
 #undef __has_amiga__
-/*has AmigaOS*/
+/* Has AmigaOS */
 #define __has_amiga__ 1
 #endif
 #if defined(aegis)
 #undef __has_aegis__
-/*has Apollo AEGIS*/
+/* Has Apollo AEGIS */
 #define __has_aegis__ 1
 #endif
 #if defined(apollo)
 #undef __has_apollo__
-/*has Apollo Domain/OS*/
+/* Has Apollo Domain/OS */
 #define __has_apollo__ 1
 #endif
 #if defined(__BEOS__)
 #undef __has_beos__
-/*has BeOS*/
+/* Has BeOS */
 #define __has_beos__ 1
 #endif
 #if defined(__bg__) || defined(__TOS_BGQ__) || defined(__bgq__) || defined(__THW_BLUEGENE__)
 #undef __has_blue_gene__
-/*has Blue Gene*/
+/* Has Blue Gene */
 #define __has_blue_gene__ 1
 #endif
 #if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
 #undef __has_bsd__
-/*has BSD*/
+/* Has BSD */
 #define __has_bsd__ 1
 #endif
 #if defined(__convex__)
 #undef __has_convex__
-/*has ConvexOS*/
+/* Has ConvexOS */
 #define __has_convex__ 1
 #endif
 #if defined(__CYGWIN__)
 #undef __has_cygwin__
-/*has Cygwin Environment*/
+/* Has Cygwin Environment */
 #define __has_cygwin__ 1
 #endif
 #if defined(DGUX) || defined(__DGUX__) || defined(__dgux__)
 #undef __has_dgux__
-/*has DG/UX*/
+/* Has DG/UX */
 #define __has_dgux__ 1
 #endif
 #if defined(_SEQUENT_) || defined(sequent)
 #undef __has_dynix_ptx__
-/*has DYNIX/ptx*/
+/* Has DYNIX/ptx */
 #define __has_dynix_ptx__ 1
 #endif
 #if defined(__ECOS)
 #undef __has_ecos__
-/*has eCos*/
+/* Has eCos */
 #define __has_ecos__ 1
 #endif
 #if defined(__EMX__)
 #undef __has_emx__
-/*has EMX Environment*/
+/* Has EMX Environment */
 #define __has_emx__ 1
 #endif
 #if defined(__HAIKU__)
-/*has Haiku*/
+/* Has Haiku */
 #define __has_haiku__ 1
 #endif
 #if defined(__hiuxmpp)
 #undef __has_hiux_mpp__
-/*has HI-UX MPP*/
+/* Has HI-UX MPP */
 #define __has_hiux_mpp__ 1
 #endif
 #if defined(_hpux) || defined(hpux) || defined(__hpux)
 #undef __has_hpux__
-/*has HP-US*/
+/* Has HP-US */
 #define __has_hpux__ 1
 #endif
 #if defined(__OS400__) || defined(__OS400_TGTVRM__)
 #undef __has_os_400__
-/*has IBM OS/400*/
+/* Has IBM OS/400 */
 #define __has_os_400__ 1
 #endif
 #if defined(__INTEGRITY)
 #undef __has_integrity__
-/*has INTEGRITY*/
+/* Has INTEGRITY */
 #define __has_integrity__ 1
 #endif
 #if defined(__INTERIX)
 #undef __has_interix__
-/*has Interix Environment*/
+/* Has Interix Environment */
 #define __has_interix__ 1
 #endif
 #if defined(sgi) || defined(__sgi)
 #undef __has_irix__
-/*has IRIX*/
+/* Has IRIX */
 #define __has_irix__ 1
 #endif
 #if defined(__linux__) || defined(linux) || defined(__linux) || defined(__nividia_fk_you__)
 #undef __has_linux__
-/*has Linux*/
+/* Has Linux */
 #define __has_linux__ 1
 #endif
 #if defined(__Lynx__)
 #undef __has_lunx__
-/*has LynxOS*/
+/* Has LynxOS */
 #define __has_lunx__ 1
 #endif
 #if defined(macintosh) || defined(Macintosh) || defined(__APPLE__) || defined(__MACH__)
 #undef __has_mac_os__
-/*has MacOS*/
+/* Has MacOS */
 #define __has_mac_os__ 1
 #endif
 #if defined(__OS9000) || defined(_OSK)
 #undef __has_microware_os_9__
-/*has Microware OS-9*/
+/* Has Microware OS-9 */
 #define __has_microware_os_9__ 1
 #endif
 #if defined(__minix)
 #undef __has_minix__
-/*has MINIX*/
+/* Has MINIX */
 #define __has_minix__ 1
 #endif
 #if defined(__MINGW32__) || defined(__MINGW64__)
-/*has MinGW*/
+/* Has MinGW */
 #define __has_mingw__ 1
 #endif
 #if defined(__MORPHOS__)
 #undef __has_morph_os__
-/*has MorphOS*/
+/* Has MorphOS */
 #define __has_morph_os__ 1
 #endif
 #if defined(mpeix) || defined(__mpexl)
 #undef __has_mpe_ix__
-/*has MPE/iX*/
+/* Has MPE/iX */
 #define __has_mpe_ix__ 1
 #endif
 #if defined(MSDOS) || defined(__MSDOS__) || defined(_MSDOS) || defined(	__DOS__)
 #undef __has_dos__
-/*has MSDOS (C++ Plus C unsupport platform)*/
+/* Has MSDOS (C++ Plus C unsupport platform) */
 #define __has_dos__ 1
 #endif
 #if defined(__TANDEM)
 #undef __has_non_stop__
-/*has NonStop*/
+/* Has NonStop */
 #define __has_non_stop__ 1
 #endif
 #if defined(__nucleus__)
 #undef __has_nucleus__
-/*has Nucleus RTOS*/
+/* Has Nucleus RTOS */
 #define __has_nucleus__ 1
 #endif
 #if defined(OS2) || defined(_OS2) || defined(__OS2__) || defined(__TOS_OS2__)
 #undef __has_os2__
-/*has OS/2*/
+/* Has OS/2 */
 #define __has_os2__ 1
 #endif
 #if defined(__palmos__)
 #undef __has_palmos__
-/*has Palm OS*/
+/* Has Palm OS */
 #define __has_palmos__ 1
 #endif
 #if defined(EPLAN9)
 #undef __has_eplan9__
-/*has EPLAN9*/
+/* Has EPLAN9 */
 #define __has_eplan9__ 1
 #endif
 #if defined(pyr)
 #undef __has_pyr__
-/*has Pyramid DC/OSx*/
+/* Has Pyramid DC/OSx */
 #define __has_pyr__ 1
 #endif
 #if defined(__QNX__) || defined(__QNXNTO__)
 #undef __has_qnx__
-/*has QNX*/
+/* Has QNX */
 #define __has_qnx__ 1
 #endif
 #if defined(sinux)
 #undef __has_reliant_unix__
-/*has Reliant UNIX*/
+/* Has Reliant UNIX */
 #define __has_reliant_unix__ 1
 #endif
 #if defined(sun) || defined(__sun)
 #undef __has_sun__
-/*has sun*/
+/* Has sun */
 #define __has_sun__ 1
 #if defined(__SVR4) || defined(__svr4__)
 #undef __has_solaris__
-/*has Solaris*/
+/* Has Solaris */
 #define __has_solaris__ 1
 #else
 #undef __has_sunos__
-/*has SunOS*/
+/* Has SunOS */
 #define __has_sunos__ 1
 #endif
 #endif
 #if defined(__VOS__)
 #undef __has_vos__
-/*has Stratus VOS*/
+/* Has Stratus VOS */
 #define __has_vos__ 1
 #endif
 #if defined(__sysv__) || defined(__SVR4) || defined(__svr4__) || defined(_SYSTYPE_SVR4)
 #undef __has_svr4__
-/*has SVR4 Environment*/
+/* Has SVR4 Environment */
 #define __has_svr4__ 1
 #endif
 #if defined(__SYLLABLE__)
 #undef __has_syllable__
-/*has Syllable*/
+/* Has Syllable */
 #define __has_syllable__ 1
 #endif
 #if defined(__SYMBIAN32__)
 #undef __has_symbianos__
-/*has Symbian OS*/
+/* Has Symbian OS */
 #define __has_symbianos__ 1
 #endif
 #if defined(__osf__) || defined(__osf)
 #undef __has_ofs1__
-/*has OSF/1*/
+/* Has OSF/1 */
 #define __has_ofs1__ 1
 #endif
 #if defined(ultrix) || defined(__ultrix) || defined(__ultrix__) || (defined(unix) && defined(vax))
 #undef __has_ultrix__
-/*has Ultrix*/
+/* Has Ultrix */
 #define __has_ultrix__ 1
 #endif
 #if defined(_UNICOS)
 #undef __has_unicos__
-/*has UNICOS*/
+/* Has UNICOS */
 #define __has_unicos__ 1
 #endif
 #if defined(_CRAY) || defined(__crayx1)
 #undef __has_unicos_mp__
-/*has UNICOS/mp*/
+/* Has UNICOS/mp */
 #define __has_unicos_mp__ 1
 #endif
 #if defined(__unix__) || defined(__unix)
 #undef __has_unix__
-/*has UNIX Enviroment*/
+/* Has UNIX Enviroment */
 #define __has_unix__ 1
 #endif
 #if defined(sco) || defined(_UNIXWARE7)
 #undef __has_unix_ware__
-/*has UnixWare*/
+/* Has UnixWare */
 #define __has_unix_ware__ 1
 #endif
 #if defined(_UWIN)
 #undef __has_uwin__
-/*has U/Win Environment*/
+/* Has U/Win Environment */
 #define __has_uwin__ 1
 #endif
 #if defined(VMS) || defined(__VMS) || defined(__VMS_VER)
 #undef __has_vms__
-/*has VMS*/
+/* Has VMS */
 #define __has_vms__ 1
 #endif
 #if defined(__VXWORKS__) || defined(__vxworks)
 #undef __has_vxworks__
-/*has VxWorks*/
+/* Has VxWorks */
 #define __has_vxworks__ 1
 #endif
 #if defined(_WIN16) || defined(_WIN32) || defined(_WIN64) || defined(__WIN32__) || defined(__TOS_WIN__) || defined(__WINDOWS__)
 #undef __has_windows__
-/*has Windows*/
+/* Has Windows */
 #define __has_windows__ 1
 #endif
 #if defined(_WIN32_WCE)
 #undef __has_windows_ce__
-/*has Windows CE*/
+/* Has Windows CE */
 #define __has_windows_ce__ 1
 #endif
 #if defined(_WINDU_SOURCE)
 #undef __has_windu__
-/*has Wind/U Environment*/
+/* Has Wind/U Environment */
 #define __has_windu__ 1
 #endif
 #if defined(__MVS__) || defined(__HOS_MVS__) || defined(__TOS_MVS__)
 #undef __has_zos__
-/*has z/OS*/
+/* Has z/OS */
 #define __has_zos__ 1
 #endif

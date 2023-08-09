@@ -1,165 +1,94 @@
 # Compilers
 ## Source
-src/lpcomps.h
+src/compilers.h
 ## Content
-## \_\_has_xxx_compiler\_\_
+### \_\_has_xxx_compiler\_\_
 #### Type
 macros
 #### Description
 1 if there is a corresponding compiler, otherwise 0.
-The 'xxx' here refers to the compiler name, and details can be found in the 'src/lpcomps.h' source code.
+The 'xxx' here refers to the compiler name, and details can be found in the 'src/compilers.h' source code.
 
-**Note: An environment may contain multiple compiler environments**
+**Note: An environment may contain multiple compiler environments.**
 #### Usage
 ```c
-#include <platform_predef.h>
+#include <cppp/cppp-platform.h>
 #if __has_msvc_compiler__
-#error "You are compile with MSVC!"
+#error "This project do not support MSVC!"
 #endif
 int main(){}
 ```
-#### Prototype
-```c
-/*ACC*/
-#define __has_acc_compiler__ 0
-/*Altium MicroBlaze C*/
-#define __has_has_altium_microblaze_c_compiler__ 0
-/*Altium C-to-Hardware*/
-#define __has_altium_c_to_hardware_compiler__ 0
-/*Amsterdam Compiler Kit*/
-#define __has_amsterdam_compiler__ 0
-/*ARM Compiler*/
-#define __has_arm_compiler__ 0
-/*Aztec C*/
-#define __has_aztec_c_compiler__ 0
-/*Borland C/C++*/
-#define __has_borland_compiler__ 0
-/*CC65*/
-#define __has_cc65_compiler__ 0
-/*Clang*/
-#define __has_clang_compiler__ 0
-/*Comeau*/
-#define __has_comeau_compiler__ 0
-/*Compaq C/C++*/
-#define __has_compaq_compiler__ 0
-/*Convex C*/
-#define __has_convex_c_compiler__ 0
-/*CompCert*/
-#define __has_compcert_compiler__ 0
-/*Coverity C/C++ Static Analyzer*/
-#define __has_coverity_compiler__ 0
-/*Cray C*/
-#define __has_cray_c_compiler__ 0
-/*Diab C/C++*/
-#define __has_diab_compiler__ 0
-/*DICE C*/
-#define __has_dice_c_compiler__ 0
-/*Digital Mars*/
-#define __has_digital_mars_compiler__ 0
-/*Dignus Systems/C++*/
-#define __has_dignus_systems_compiler__ 0
-/*DJGPP*/
-#define __has_djgpp_compiler__ 0
-/*EDG C++ Frontend*/
-#define __has_edg_compiler__ 0
-/*EKOPath*/
-#define __has_ekopath_compiler__ 0
-/*Fujitsu C++*/
-#define __has_fujitsu_compiler__ 0
-/*GCC C/C++*/
-#define __has_gcc_compiler__ 0
-/*Green Hill C/C++*/
-#define __has_greenhill_compiler__ 0
-/*HP ANSI C*/
-#define __has_hpansi_c_compiler__ 0
-/*HP aC++*/
-#define __has_hpa_compiler__ 0
-/*IAR C/C++*/
-#define __has_iar_compiler__ 0
-/*ImageCraft C*/
-#define __has_imagecraft_c_compiler__ 0
-/*Intel C/C++*/
-#define __has_intel_compiler__ 0
-/*KAI C++*/
-#define __has_kai_compiler__ 0
-/*KEIL CARM*/
-#define __has_keil_carm_compiler__ 0
-/*KEIL C166*/
-#define __has_keil_c166_compiler__ 0
-/*KEIL C51*/
-#define __has_keil_c51_compiler__ 0
-/*LCC*/
-#define __has_lcc_compiler__ 0
-/*LLVM*/
-#define __has_llvm_compiler__ 0
-/*MetaWare High C/C++*/
-#define __has_metaware_high_compiler__ 0
-/*Metrowerks CodeWarrior*/
-#define __has_metrowerks_codewarrior_compiler__ 0
-/*Microsoft Visual C++*/
-#define __has_msvc_compiler__ 0
-/*Microtec C/C++*/
-#define __has_microtec_compiler__ 0
-/*Microway NDP C*/
-#define __has_microway_ndp_c_compiler__ 0
-/*MinGW*/
-#define __has_mingw_compiler__ 0
-/*MIPSpro*/
-#define __has_mipspro_compiler__ 0
-/*Miracle C*/
-#define __has_miracle_c_compiler__ 0
-/*MPW C++*/
-#define __has_mpr_compiler__ 0
-/*Norcroft C*/
-#define __has_norcroft_c_compiler__ 0
-/*NWCC*/
-#define __has_nwcc_compiler__ 0
-/*Open64*/
-#define __has_open64_compiler__ 0
-/*Oracle Pro*C Precompiler*/
-#define __has_oracle_pro_compiler__ 0
-/*Oracle Solaris Studio*/
-#define __has_oracle_solaris_studio_compiler__ 0
-/*Pacific C*/
-#define __has_pacific_c_compiler__ 0
-/*Palm C/C++*/
-#define __has_palm_compiler__ 0
-/*Pelles C*/
-#define __has_pelles_c_compiler__ 0
-/*Portland Group C/C++*/
-#define __has_portland_group_compiler__ 0
-/*Renesas C/C++*/
-#define __has_renesas_compiler__ 0
-/*SAS/C*/
-#define __has_sas_c_compiler__ 0
-/*SCO OpenServer*/
-#define __has_sco_compiler__ 0
-/*Small Device C Compiler*/
-#define __has_small_device_compiler__ 0
-/*SN Compiler*/
-#define __has_sn_compiler__ 0
-/*Stratus VOS C*/
-#define __has_stratus_vos_c_compiler__ 0
-/*Symantec C++*/
-#define __has_symantec_compiler__ 0
-/*TenDRA C/C++*/
-#define __has_tendra_compiler__ 0
-/*Texas Instruments C/C++ Compiler*/
-#define __has_texas_instruments_compiler__ 0
-/*THINK C*/
-#define __has_think_c_compiler__ 0
-/*Tiny C*/
-#define __has_tiny_c_compiler__ 0
-/*Turbo C/C++*/
-#define __has_turboc_compiler__ 0
-/*Ultimate C/C++*/
-#define __has_ultimate_compiler__ 0
-/*USL C*/
-#define __has_usl_c_compiler__ 0
-/*VBCC*/
-#define __has_vbcc_compiler__ 0
-/*Watcom C++*/
-#define __has_watcom_compiler__ 0
-/*Zortech C++*/
-#define __has_zortech_compiler__ 0
-```
+#### We provide preset compiler macros
+| Compiler | Macro |
+| :----: | :----: |
+| ACC | \_\_has_acc_compiler\_\_ |
+| Altium MicroBlaze C | \_\_has_has_altium_microblaze_c_compiler\_\_ |
+| Altium C-to-Hardware | \_\_has_altium_c_to_hardware_compiler\_\_ |
+| Amsterdam Compiler Kit | \_\_has_amsterdam_compiler\_\_ |
+| ARM Compiler | \_\_has_arm_compiler\_\_ |
+| Aztec C | \_\_has_aztec_c_compiler\_\_ |
+| Borland C/C++ | \_\_has_borland_compiler\_\_ |
+| CC65 | \_\_has_cc65_compiler\_\_ |
+| Clang | \_\_has_clang_compiler\_\_ |
+| Comeau | \_\_has_comeau_compiler\_\_ |
+| Compaq C/C++ | \_\_has_compaq_compiler\_\_ |
+| Convex C | \_\_has_convex_c_compiler\_\_ |
+| CompCert | \_\_has_compcert_compiler\_\_ |
+| Coverity C/C++ Static Analyzer | \_\_has_coverity_compiler\_\_ |
+| Cray C | \_\_has_cray_c_compiler\_\_ |
+| Diab C/C++ | \_\_has_diab_compiler\_\_ |
+| DICE C | \_\_has_dice_c_compiler\_\_ |
+| Digital Mars | \_\_has_digital_mars_compiler\_\_ |
+| Dignus Systems/C++ | \_\_has_dignus_systems_compiler\_\_ |
+| DJGPP | \_\_has_djgpp_compiler\_\_ |
+| EDG C++ Frontend | \_\_has_edg_compiler\_\_ |
+| EKOPath | \_\_has_ekopath_compiler\_\_ |
+| Fujitsu C++ | \_\_has_fujitsu_compiler\_\_ |
+| GCC C/C++ | \_\_has_gcc_compiler\_\_ |
+| Green Hill C/C++ | \_\_has_greenhill_compiler\_\_ |
+| HP ANSI C | \_\_has_hpansi_c_compiler\_\_ |
+| HP aC++ | \_\_has_hpa_compiler\_\_ |
+| IAR C/C++ | \_\_has_iar_compiler\_\_ |
+| ImageCraft C | \_\_has_imagecraft_c_compiler\_\_ |
+| Intel C/C++ | \_\_has_intel_compiler\_\_ |
+| KAI C++ | \_\_has_kai_compiler\_\_ |
+| KEIL CARM | \_\_has_keil_carm_compiler\_\_ |
+| KEIL C166 | \_\_has_keil_c166_compiler\_\_ |
+| KEIL C51 | \_\_has_keil_c51_compiler\_\_ |
+| LCC | \_\_has_lcc_compiler\_\_ |
+| LLVM | \_\_has_llvm_compiler\_\_ |
+| MetaWare High C/C++ | \_\_has_metaware_high_compiler\_\_ |
+| Metrowerks CodeWarrior | \_\_has_metrowerks_codewarrior_compiler\_\_ |
+| Microsoft Visual C++ | \_\_has_msvc_compiler\_\_ |
+| Microtec C/C++ | \_\_has_microtec_compiler\_\_ |
+| Microway NDP C | \_\_has_microway_ndp_c_compiler\_\_ |
+| MinGW | \_\_has_mingw_compiler\_\_ |
+| MIPSpro | \_\_has_mipspro_compiler\_\_ |
+| Miracle C | \_\_has_miracle_c_compiler\_\_ |
+| MPW C++ | \_\_has_mpr_compiler\_\_ |
+| Norcroft C | \_\_has_norcroft_c_compiler\_\_ |
+| NWCC | \_\_has_nwcc_compiler\_\_ |
+| Open64 | \_\_has_open64_compiler\_\_ |
+| Oracle Pro*C Precompiler | \_\_has_oracle_pro_compiler\_\_ |
+| Oracle Solaris Studio | \_\_has_oracle_solaris_studio_compiler\_\_ |
+| Pacific C | \_\_has_pacific_c_compiler\_\_ |
+| Palm C/C++ | \_\_has_palm_compiler\_\_ |
+| Pelles C | \_\_has_pelles_c_compiler\_\_ |
+| Portland Group C/C++ | \_\_has_portland_group_compiler\_\_ |
+| Renesas C/C++ | \_\_has_renesas_compiler\_\_ |
+| SAS/C | \_\_has_sas_c_compiler\_\_ |
+| SCO OpenServer | \_\_has_sco_compiler\_\_ |
+| Small Device C Compiler | \_\_has_small_device_compiler\_\_ |
+| SN Compiler | \_\_has_sn_compiler\_\_ |
+| Stratus VOS C | \_\_has_stratus_vos_c_compiler\_\_ |
+| Symantec C++ | \_\_has_symantec_compiler\_\_ |
+| TenDRA C/C++ | \_\_has_tendra_compiler\_\_ |
+| Texas Instruments C/C++ Compiler | \_\_has_texas_instruments_compiler\_\_ |
+| THINK C | \_\_has_think_c_compiler\_\_ |
+| Tiny C | \_\_has_tiny_c_compiler\_\_ |
+| Turbo C/C++ | \_\_has_turboc_compiler\_\_ |
+| Ultimate C/C++ | \_\_has_ultimate_compiler\_\_ |
+| USL C | \_\_has_usl_c_compiler\_\_ |
+| VBCC | \_\_has_vbcc_compiler\_\_ |
+| Watcom C++ | \_\_has_watcom_compiler\_\_ |
+| Zortech C++ | \_\_has_zortech_compiler\_\_ |

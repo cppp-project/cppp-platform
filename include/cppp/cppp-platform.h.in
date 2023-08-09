@@ -1,0 +1,40 @@
+/**
+ * @file cppp/cppp-platform.h
+ * @author ChenPi11
+ * @copyright Copyright (C) 2023 The C++ Plus Project
+ * @date 2023-08-07
+ * @brief C++ Plus platform predefined detection.
+ * @version @PROJECT_VERSION@
+ * @see https://sourceforge.net/p/predef/wiki/Home/
+ * @link https://github.com/cppp-project/cppp-platform
+ */
+/* Copyright (C) 2023 The C++ Plus Project
+   This file is part of the cppp-platform library.
+
+   The cppp-platform library is free software; you can redistribute it
+   and/or modify it under the terms of the The Unlicense as published
+   by the unlicense.org
+
+   The cppp-platform library is distributed in the hope that it will be
+   useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+   of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the The
+   Unlicense for more details.
+
+   You should have received a copy of the The Unlicense along with the
+   cppp-platform library; see the file COPYING.
+   If not, see <http://unlicense.org/>.  */
+
+#ifndef _CPPP_PLATFORM_H
+#define _CPPP_PLATFORM_H
+/* Architectures detection. */
+@ARCHITECTURES@
+
+/* Compilers detection. */
+@COMPILERS@
+
+/* C/C++ standards detection. */
+@LANGUAGESTANDARDS@
+
+/* Platforms detection. */
+@PLATFORMS@
+#endif

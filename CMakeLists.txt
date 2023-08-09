@@ -1,26 +1,55 @@
-# CMakeLists for libplatform
-cmake_minimum_required(VERSION 3.0)
+# Copyright (C) 2023 The C++ Plus Project.
+# This file is part of the cppp-platform library.
+#
+# The cppp-platform library is free software; you can redistribute it
+# and/or modify it under the terms of the The Unlicense as published
+# by the unlicense.org
+#
+# The cppp-platform library is distributed in the hope that it will be
+# useful, but WITHOUT ANY WARRANTY; without even the implied warranty
+# of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the The
+# Unlicense for more details.
+#
+# You should have received a copy of the The Unlicense along with the
+# cppp-platform library; see the file COPYING.
+# If not, see <http://unlicense.org/>.
 
-# Project
-project(libplatform)
+cmake_minimum_required(VERSION 3.12)
+project(cppp-platform VERSION 1.3.0)
 
-# Source path
-set(LP_SOURCE ${CMAKE_SOURCE_DIR})
-set(LP_SRCDIR ${LP_SOURCE}/src)
-set(LP_FILE_TITLE ${LP_SRCDIR}/title.h)
-set(LP_FILE_END ${LP_SRCDIR}/end.h)
-set(LP_FILES ${LP_FILE_TITLE} ${LP_SRCDIR}/lparchs.h ${LP_SRCDIR}/lpcomps.h ${LP_SRCDIR}/lpplat.h ${LP_SRCDIR}/lpstds.h ${LP_FILE_END})
+# Set C++ standard
+set(CMAKE_CXX_STANDARD 11)
 
-# Build path
-set(LP_BUILD_OUTPUT ${CMAKE_BINARY_DIR})
-set(LP_OUT_INCLUDE_DIR ${LP_BUILD_OUTPUT}/include)
-set(LP_OUT_RUNTIME_DIR ${LP_BUILD_OUTPUT}/bin)
-set(LP_OUT_LIBRARY_DIR ${LP_BUILD_OUTPUT}/lib)
+if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/build-aux")
+    set(BUILD_AUX "${CMAKE_CURRENT_SOURCE_DIR}/build-aux")
+elseif(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/../build-aux")
+    set(BUILD_AUX "${CMAKE_CURRENT_SOURCE_DIR}/../build-aux")
+else()
+    message(FATAL_ERROR "CMake build-aux directory is not exists, try to execute 'setup.cmd' or './setup.sh' to get it.")
+endif()
+set(AUX_DIR "${BUILD_AUX}/cmake")
 
-# Make include
-file(REMOVE ${LP_OUT_INCLUDE_DIR}/platform_predef.h)
-foreach(FILE ${LP_FILES})
-    message("Adding ${FILE}...")
-    file(READ ${FILE} _DATA )
-    write_file(${LP_OUT_INCLUDE_DIR}/platform_predef.h ${_DATA} APPEND)
-endforeach()
+message(STATUS "Using '${BUILD_AUX}' for C++ Plus build-aux directory.")
+add_subdirectory("${BUILD_AUX}")
+
+include("${AUX_DIR}/cppp.cmake")
+
+# Read source files
+file(READ "${srcdir}/src/architectures.h" ARCHITECTURES)
+file(READ "${srcdir}/src/compilers.h" COMPILERS)
+file(READ "${srcdir}/src/languagestandards.h" LANGUAGESTANDARDS)
+file(READ "${srcdir}/src/platforms.h" PLATFORMS)
+
+# Genetate header
+configure_file("${srcdir}/include/cppp/cppp-platform.h.in" "${output_includedir}/cppp/cppp-platform.h")
+
+# Generate header file for install
+cppp_nls_autotranslate("${output_includedir}/cppp/cppp-platform.h" "${srcdir}/lang")
+
+# Install
+# Includes
+# PERMISSIONS 0644
+install(FILES "${output_includedir}/cppp/cppp-platform.h"
+        DESTINATION "${install_includedir}"
+        RENAME "cppp/cppp-platform.h"
+        PERMISSIONS OWNER_READ OWNER_WRITE GROUP_READ WORLD_READ )
