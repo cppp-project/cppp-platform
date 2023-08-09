@@ -1,32 +1,22 @@
 # Introduction
-libplatform is a portable platform check library for C++ Plus
+cppp-platform is a portable platform check library for C++ Plus.
 ## Build
-### Build with GNU Makefile
-#### Dependence
-+ GNU Make
-+ GNU/Linux commands: **cat, mkdir, install, rm**
-#### Make and Install
-```shell
-./configure
-make
-make install
-```
-The build results are in the 'build' directory.
-### Build with CMake
-#### Dependence
-+ CMake (version >= 3.0)
-#### Make
+
+### Dependence
++ CMake (version >= 3.12)
+### Make
 ```shell
 mkdir build
 cd build
-cmake ..
+cmake .. -DCMAKE_INSTALL_PREFIX=[[PREFIX]]
+cmake --build .
+cmake --install .
 ```
-The build results are in the 'build' directory.
 
 ## Usage
-After install, you can use libplatform in C/C++
+After install, you can use cppp-platform in C/C++
 ```c
-#include <cppp/libplatform.h>
+#include <cppp/cppp-platform.h>
 #include <stdio.h>
 int main()
 {
