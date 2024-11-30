@@ -1,9 +1,9 @@
 # Introduction
-cppp-platform is a portable platform check library for C++ Plus.
+cppp-platform is a portable platform check library for C+++.
 
 # Build
 ## Dependence
-+ CMake (version >= 3.12)
++ CMake (version >= 3.10)
 
 ## Command
 ```shell

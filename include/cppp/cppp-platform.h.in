@@ -1,7 +1,6 @@
 /**
  * @file cppp/cppp-platform.h
  * @author ChenPi11
- * @copyright Copyright (C) 2024 The C++ Plus Project
  * @brief C++ Plus platform predefined detection.
  * @version @PROJECT_VERSION@
  * @see https://github.com/cpredef/predef
