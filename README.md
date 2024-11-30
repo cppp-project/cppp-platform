@@ -1,39 +1,22 @@
-# Introduction
-cppp-platform is a portable platform check library for C++ Plus.
+# cppp-platfrom -- Portable platform check library
 
-# Build
-## Dependence
-+ CMake (version >= 3.12)
+## Build
 
-## Command
+### Dependencies
+
++ CMake (version >= 3.10)
+
+### Command
+
 ```shell
 mkdir build
 cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=[[PREFIX]]
+# If you want to build the example, add -DBUILD_EXAMPLE=ON
 cmake --build .
 cmake --install .
 ```
 
-# Example
-After install, you can use cppp-platform in C/C++
-```c
-#include <cppp/cppp-platform.h>
-#include <stdio.h>
-int main()
-{
-    if(__has_windows__)
-    {
-        printf("Compile in Windows!\n");
-    }
-    else
-    {
-        printf("Compile non-Windows!\n");
-    }
-    printf("Target arch:%s\n",__arch__);
-    printf("Target arch name:%s\n",__arch_name__);
-    printf("Pointer width:%d\n",__POINTER_WIDTH__);
-}
-```
+## Documentation
 
-# Manual
-[User Manual](doc/doc.md)
+[Documentation](doc/doc.md)

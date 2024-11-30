@@ -1,24 +1,27 @@
 # Platforms
-## Source
-src/platforms.h
-## Content
-## \_\_has_xxx\_\_
-#### Type
-macros
-#### Description
-If there is a corresponding OS environment, it is 1, otherwise it is 0.
-The 'xxx' here refers to the OS name, and details can be found in the 'src/platforms.h' source code.
 
-**Note: An compile environment may contain multiple environments**
-#### Usage
-```c
-#include <cppp/cppp-platform.h>
-#if __has_windows__
-#error "We do not support Windows!"
-#endif
-int main(){}
-```
+## Source
+
+[src/platforms.h](https://github.com/cppp-project/cppp-platform/blob/main/src/platforms.h)
+
+## Content
+
+### \_\_has_xxx\_\_
+
+#### Type of \_\_has_xxx\_\_
+
+macro
+
+#### Description of \_\_has_xxx\_\_
+
+If there is a corresponding OS environment, it is `1`, otherwise it is `0`.
+
+The 'xxx' here refers to the OS name, and details can be found in the `src/platforms.h` source code.
+
+**Note: An compile environment may contain multiple environments at the same time. e.g. Cygwin Environment is a Unix-like environment, but it is also a Windows environment.**
+
 #### We provide preset compiler macros
+
 | Platform | Macro |
 | :----: | :----: |
 | AIX | \_\_has_aix\_\_ |
@@ -51,7 +54,7 @@ int main(){}
 | MinGW | \_\_has_mingw\_\_ |
 | MorphOS | \_\_has_morph_os\_\_ |
 | MPE/iX | \_\_has_mpe_ix\_\_ |
-| MSDOS (C++ Plus C unsupport platform) | \_\_has_dos\_\_ |
+| MSDOS | \_\_has_dos\_\_ |
 | NonStop | \_\_has_non_stop\_\_ |
 | Nucleus RTOS | \_\_has_nucleus\_\_ |
 | OS/2 | \_\_has_os2\_\_ |
@@ -80,3 +83,18 @@ int main(){}
 | Windows CE | \_\_has_windows_ce\_\_ |
 | Wind/U Environment | \_\_has_windu\_\_ |
 | z/OS | \_\_has_zos\_\_ |
+
+#### Example of \_\_has_xxx\_\_
+
+```c
+#include <cppp/cppp-platform.h>
+
+#if __has_windows__
+#error "We do not support Windows!"
+#endif
+
+int main()
+{
+    return 0;
+}
+```

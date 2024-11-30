@@ -1,14 +1,23 @@
 # Architectures
+
 ## Source
-src/architectures.h
-## Content
+
+[src/architectures.h](https://github.com/cppp-project/cppp-platform/blob/main/src/architectures.h)
+
+## Contents
+
 ### \_\_arch\_\_
-#### Type
-macros
-#### Description
-Represents the processor architecture type
-If the judgment fails, the value is '\_\_arch_unknown\_\_'
-#### We provide preset architecture macros
+
+#### The type of \_\_arch\_\_
+
+macro
+
+#### Description of \_\_arch\_\_
+
+Represents the processor architecture type. If the judgment fails, the value is set to '\_\_arch_unknown\_\_'.
+
+#### Value of \_\_arch\_\_
+
 | Architecture | Macro |
 | :----: | :----: |
 | Alpha | \_\_arch_alpha\_\_ |
@@ -31,40 +40,60 @@ If the judgment fails, the value is '\_\_arch_unknown\_\_'
 | TMS470 | \_\_arch_tms470\_\_8 |
 | Unknown architecture | \_\_arch_unknown\_\_ |
 
-#### Usage
+#### Example of \_\_arch\_\_
+
 ```c
 #include <cppp/cppp-platform.h>
+
 #if (__arch__ == __arch_x86__)
-#pragma message "Build in x86 arch"
+#pragma message "Build in x86."
 #elif (__arch__ == __arch_arm__)
-#pragma message "Build in arm arch"
+#pragma message "Build in arm."
 #elif
-#pragma message "Build in other arch"
+#pragma message "Build in other."
 #endif
-int main(){}
+
+int main()
+{
+    return 0;
+}
 ```
+
 ### \_\_arch_name\_\_
-#### Type
+
+#### Type of \_\_arch_name\_\_
+
 macro
-#### Description
-Architecture name, like 'uname -m'
-If the judgment fails, the value is "unknown"
-#### Usage
+
+#### Description of \_\_arch_name\_\_
+
+Architecture name, like `uname -m`. If the judgment fails, the value is `"Unknown"`.
+
+#### Example of \_\_arch_name\_\_
+
 ```c
 #include <cppp/cppp-platform.h>
+
 #include <stdio.h>
+
 int main()
 {
     printf("Arch name: %s\n", __arch_name__);
 }
 ```
+
 ### \_\_POINTER_WIDTH\_\_
-#### Type
+
+#### Type of \_\_POINTER_WIDTH\_\_
+
 macro
-#### Description
-This represents the calculation formula for pointer length
-The value is generally 32 or 64
-#### Usage
+
+#### Description of \_\_POINTER_WIDTH\_\_
+
+This represents the pointer length. The value is generally 32 or 64.
+
+#### Example of \_\_POINTER_WIDTH\_\_
+
 ```c
 #include <cppp/cppp-platform.h>
 #include <stdio.h>

@@ -1,0 +1,43 @@
+name: 🛠️ Build cppp-platfrom
+
+steps:
+  - name: 📦 Make source distribution directory
+    mkdir: ${{ project.name }}-${{ project.version }}
+  - mkdir: dist
+
+  - name: 📦 Copy files to source distribution directory
+    copy: ${{ cwd }}
+    to: ${{ project.name }}-${{ project.version }}
+    excludes:
+      [
+        ".git*",
+        "build",
+        "dist",
+        "*.7z",
+        "*.gz",
+        "*.xz",
+        "*.zip",
+        ".vscode",
+        ".rubisco/extensions",
+        "${{ project.name }}-*",
+      ]
+
+  - name: 📦 Packing the source distribution
+    compress: ${{ project.name }}-${{ project.version }}
+    to: dist/${{ project.name }}-${{ project.version }}
+    format: [zip, tar.xz]
+
+  - name: 🛠️ Build the project.
+    mkdir: build
+  - cwd: build
+    run: ["cmake", "..", "-DCMAKE_BUILD_TYPE=Release", "-DCMAKE_INSTALL_PREFIX=install"]
+  - cwd: build
+    run: ["cmake", "--build", ".", "--config", "Release"]
+  - cwd: build
+    run: ["cmake", "--install", ".", "--config", "Release"]
+
+  - name: 📦 Packing the binary distribution.
+    compress: build/install
+    start: build
+    to: dist/${{ project.name }}-${{ project.version }}-unknown-unknown-unknown
+    format: [zip, tar.xz]

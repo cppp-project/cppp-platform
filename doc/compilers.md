@@ -1,24 +1,27 @@
 # Compilers
-## Source
-src/compilers.h
-## Content
-### \_\_has_xxx_compiler\_\_
-#### Type
-macros
-#### Description
-1 if there is a corresponding compiler, otherwise 0.
-The 'xxx' here refers to the compiler name, and details can be found in the 'src/compilers.h' source code.
 
-**Note: An environment may contain multiple compiler environments.**
-#### Usage
-```c
-#include <cppp/cppp-platform.h>
-#if __has_msvc_compiler__
-#error "This project do not support MSVC!"
-#endif
-int main(){}
-```
-#### We provide preset compiler macros
+## Source
+
+[src/compilers.h](https://github.com/cppp-project/cppp-platform/blob/main/src/compilers.h)
+
+## Content
+
+### \_\_has_xxx_compiler\_\_
+
+#### Type of \_\_has_xxx_compiler\_\_
+
+macro
+
+#### Description of \_\_has_xxx_compiler\_\_
+
+`1` if there is a corresponding compiler, otherwise `0`.
+
+The 'xxx' here refers to the compiler name, and details can be found in the `src/compilers.h` source code.
+
+**Note: An environment may contain multiple compiler environments, so multiple compiler macros may be defined at the same time. e.g. `__has_gcc_compiler__`, `__has_clang_compiler__`.**
+
+#### Compiler List
+
 | Compiler | Macro |
 | :----: | :----: |
 | ACC | \_\_has_acc_compiler\_\_ |
@@ -92,3 +95,18 @@ int main(){}
 | VBCC | \_\_has_vbcc_compiler\_\_ |
 | Watcom C++ | \_\_has_watcom_compiler\_\_ |
 | Zortech C++ | \_\_has_zortech_compiler\_\_ |
+
+#### Example of \_\_has_xxx_compiler\_\_
+
+```c
+#include <cppp/cppp-platform.h>
+
+#if __has_msvc_compiler__
+#error "This project do not support MSVC!"
+#endif
+
+int main()
+{
+    return 0;
+}
+```

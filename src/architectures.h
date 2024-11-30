@@ -38,7 +38,7 @@
 #define __arch_unknown__ 0
 
 #define __arch__ __arch_unknown__
-#define __arch_name__ "unknown"
+#define __arch_name__ "Unknown"
 #if defined(__alpha__) || defined(__alpha) || defined(_M_ALPHA)
 #undef __arch__
 #undef __arch_name__

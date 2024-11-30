@@ -1,5 +1,7 @@
 # CMake build files
 build/
+dist/
+install/
 CMakeFiles
 *.so
 *.so.*.*.*
@@ -33,9 +35,6 @@ Testing
 .vscode
 .cache
 
-# Autopull modules
-build-aux
-
 # Dist directory and temps
-cppp-platform-v*
+cppp-platform-*
 __pycache__
