@@ -33,9 +33,6 @@ Testing
 .vscode
 .cache
 
-# Autopull modules
-build-aux
-
 # Dist directory and temps
 cppp-platform-v*
 __pycache__
