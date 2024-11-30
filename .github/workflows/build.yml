@@ -6,124 +6,42 @@ on:
 
 jobs:
 
-  build-dist:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
 
     #--------------------------------------------collect--------------------------------------------
-    - uses: actions/checkout@v3
-    
-    - name: 🏷️ Get infomations
-      run: |
-        tag="${GITHUB_REF#refs/tags/}"
-        echo "tag=$tag" >> $GITHUB_ENV
-        echo "pkgname=cppp-platform-$tag" >> $GITHUB_ENV
-        echo "srcdir=$(pwd)" >> $GITHUB_ENV
+    - uses: actions/checkout@v4
+
+    - uses: actions/setup-python@v5
+      with:
+        python-version: "3.13"
 
     - name: 📁 Collect dependencies
       run: |
         sudo apt-get update
         sudo apt-get install p7zip-full zip xz-utils -y
         sudo apt-get install cmake gcc python3 -y
-        
+        python -m pip install --upgrade pip
+        python -m pip install rubisco
+
     #--------------------------------------------build--------------------------------------------
-    - name: 🧳 Prepare for source distribution building
+    - name: 🛠️ Build distribution
       run: |
-        mkdir -p ./dist
-        ./setup.sh
-    
-    - name: 🛠️ Build source distribution
-      run: |
-        ./cpppdist.py
+        rubisco build
     
     - name: 📦 Make packages
       run: |
-        tar cvf ${{ env.pkgname }}.tar ${{ env.pkgname }}
-        zip -r -9 dist/${{ env.pkgname }}.zip ${{ env.pkgname }}
-        7z a dist/${{ env.pkgname }}.7z ${{ env.pkgname }}
-        xz -c -9 -k ${{ env.pkgname }}.tar > dist/${{ env.pkgname }}.tar.xz
-        gzip -c -9 -k ${{ env.pkgname }}.tar > dist/${{ env.pkgname }}.tar.gz
-
         cd dist
-        for i in $(ls) ; do md5sum $i > $i.md5 ; done
+        for i in $(ls) ; do sha256sum $i > $i.sha256 ; done
         cd ..
     
     #--------------------------------------------publish--------------------------------------------
 
     - name: ⬆️ Create release and upload assets
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v2
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-          tag_name: ${{ env.tag }}
           files: ./dist/*
-
-  build:
-  
-    needs: build-dist
-
-    strategy:
-      fail-fast: false
-      matrix:
-        arch: [
-            any-any-any
-          ]
-    
-    runs-on: ubuntu-latest
-    
-    steps:
-    
-    #--------------------------------------------collect--------------------------------------------
-    - name: 🏷️ Get infomations
-      run: |
-        tag="${GITHUB_REF#refs/tags/}"
-        echo "tag=$tag" >> $GITHUB_ENV
-        echo "pkgname=cppp-platform-$tag" >> $GITHUB_ENV
-        echo "srcdir=$(pwd)" >> $GITHUB_ENV
-
-    - name: 📁 Collect dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install p7zip-full zip xz-utils wget -y
-        sudo apt-get install cmake -y
-        sudo apt-get install gcc g++ -y
-    
-    - name: 📁 Get source distribution tarball
-      run: |
-        wget https://github.com/${{ github.repository }}/releases/download/${{ env.tag }}/${{ env.pkgname }}.tar.gz
-        tar zxvf ${{ env.pkgname }}.tar.gz
-        mv ${{ env.pkgname }}/* .
-    
-    #--------------------------------------------build--------------------------------------------
-    - name: 🧳 Prepare for binary distribution building
-      run: |
-        mkdir -p dist
-    
-    - name: 🛠️ Build binary distribution
-      run: |
-        mkdir build
-        cd build
-        cmake .. -DCMAKE_INSTALL_PREFIX=${{ env.srcdir }}/${{ env.pkgname }}-${{ matrix.arch }}
-        cmake --build . --config=Release
-        cmake --install .
-        cd ..
-    
-    - name: 📦 Make packages
-      run: |
-        tar cvf ${{ env.pkgname }}-${{ matrix.arch }}.tar ${{ env.pkgname }}-${{ matrix.arch }}
-        zip -r -9 dist/${{ env.pkgname }}-${{ matrix.arch }}.zip ${{ env.pkgname }}-${{ matrix.arch }}
-        7z a dist/${{ env.pkgname }}-${{ matrix.arch }}.7z ${{ env.pkgname }}-${{ matrix.arch }}
-        xz -c -9 -k ${{ env.pkgname }}-${{ matrix.arch }}.tar > dist/${{ env.pkgname }}-${{ matrix.arch }}.tar.xz
-        gzip -c -9 -k ${{ env.pkgname }}-${{ matrix.arch }}.tar > dist/${{ env.pkgname }}-${{ matrix.arch }}.tar.gz
-
-        cd dist
-        for i in $(ls) ; do md5sum $i > $i.md5 ; done
-        cd ..
-    
-    #--------------------------------------------publish--------------------------------------------
-
-    - name: ⬆️ Create release and upload assets
-      uses: softprops/action-gh-release@v1
-      with:
-        tag_name: ${{ env.tag }}
-        files: ./dist/*

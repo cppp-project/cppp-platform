@@ -1,5 +1,7 @@
 # CMake build files
 build/
+dist/
+install/
 CMakeFiles
 *.so
 *.so.*.*.*
@@ -34,5 +36,5 @@ Testing
 .cache
 
 # Dist directory and temps
-cppp-platform-v*
+cppp-platform-*
 __pycache__
