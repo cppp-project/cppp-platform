@@ -1,4 +1,5 @@
-# cppp-platform Manual
+# cppp-platform Documentation
+
 [Architectures](./architectures.md)
 
 [Compilers](./compilers.md)
