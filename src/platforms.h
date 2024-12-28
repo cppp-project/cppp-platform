@@ -300,7 +300,7 @@
 /* Has MPE/iX */
 #define __has_mpe_ix__ 1
 #endif
-#if defined(MSDOS) || defined(__MSDOS__) || defined(_MSDOS) || defined(	__DOS__)
+#if defined(MSDOS) || defined(__MSDOS__) || defined(_MSDOS) || defined(__DOS__)
 #undef __has_dos__
 /* Has MSDOS (C++ Plus C unsupport platform) */
 #define __has_dos__ 1
@@ -399,7 +399,7 @@
 /* Has UNICOS/mp */
 #define __has_unicos_mp__ 1
 #endif
-#if defined(__unix__) || defined(__unix)
+#if defined(__unix__) || defined(__unix) || defined(unix)
 #undef __has_unix__
 /* Has UNIX Enviroment */
 #define __has_unix__ 1
