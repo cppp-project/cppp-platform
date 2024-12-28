@@ -31,13 +31,13 @@ jobs:
     - name: 🛠️ Build distribution
       run: |
         rubisco build
-    
+
     - name: 📦 Make packages
       run: |
         cd dist
         for i in $(ls) ; do sha256sum $i > $i.sha256 ; done
         cd ..
-    
+
     #--------------------------------------------publish--------------------------------------------
 
     - name: ⬆️ Create release and upload assets

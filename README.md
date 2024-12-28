@@ -19,4 +19,4 @@ cmake --install .
 
 ## Documentation
 
-[Documentation](doc/doc.md)
+[Documentation](docs/docs.md)

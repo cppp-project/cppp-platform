@@ -16,6 +16,16 @@
 #define __has_blue_gene__ 0
 /* No BSD */
 #define __has_bsd__ 0
+/* No FreeBSD */
+#define __has_freebsd__ 0
+/* No NetBSD */
+#define __has_netbsd__ 0
+/* No OpenBSD */
+#define __has_openbsd__ 0
+/* No BSDI */
+#define __has_bsdi__ 0
+/* No DragonFly */
+#define __has_dragonfly__ 0
 /* No ConvexOS */
 #define __has_convex__ 0
 /* No Cygwin Environment */
@@ -157,7 +167,32 @@
 /* Has Blue Gene */
 #define __has_blue_gene__ 1
 #endif
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__) || defined(__bsdi__) || defined(__DragonFly__)
+#if defined(__FreeBSD__)
+#undef __has_freebsd__
+/* Has FreeBSD */
+#define __has_freebsd__ 1
+#endif
+#if defined(__NetBSD__)
+#undef __has_netbsd__
+/* Has NetBSD */
+#define __has_netbsd__ 1
+#endif
+#if defined(__OpenBSD__)
+#undef __has_openbsd__
+/* Has OpenBSD */
+#define __has_openbsd__ 1
+#endif
+#if defined(__bsdi__)
+#undef __has_bsdi__
+/* Has BSDI */
+#define __has_bsdi__ 1
+#endif
+#if defined(__DragonFly__)
+#undef __has_dragonfly__
+/* Has DragonFly */
+#define __has_dragonfly__ 1
+#endif
+#if __has_freebsd__ || __has_netbsd__ || __has_openbsd__ || __has_bsdi__ || __has_dragonfly__
 #undef __has_bsd__
 /* Has BSD */
 #define __has_bsd__ 1

@@ -33,6 +33,11 @@ The 'xxx' here refers to the OS name, and details can be found in the `src/platf
 | BeOS | \_\_has_beos\_\_ |
 | Blue Gene | \_\_has_blue_gene\_\_ |
 | BSD | \_\_has_bsd\_\_ |
+| FreeBSD | \_\_has_freebsd\_\_ |
+| NetBSD | \_\_has_netbsd\_\_ |
+| OpenBSD | \_\_has_openbsd\_\_ |
+| BSDI | \_\_has_bsdi\_\_ |
+| DragonFly BSD | \_\_has_dragonfly\_\_ |
 | ConvexOS | \_\_has_convex\_\_ |
 | Cygwin Environment | \_\_has_cygwin\_\_ |
 | DG/UX | \_\_has_dgux\_\_ |
