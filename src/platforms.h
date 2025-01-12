@@ -101,7 +101,7 @@
 /* No Symbian OS */
 #define __has_symbianos__ 0
 /* No OSF/1 */
-#define __has_ofs1__ 0
+#define __has_osf1__ 0
 /* No Ultrix */
 #define __has_ultrix__ 0
 /* No UNICOS */
@@ -380,9 +380,9 @@
 #define __has_symbianos__ 1
 #endif
 #if defined(__osf__) || defined(__osf)
-#undef __has_ofs1__
+#undef __has_osf1__
 /* Has OSF/1 */
-#define __has_ofs1__ 1
+#define __has_osf1__ 1
 #endif
 #if defined(ultrix) || defined(__ultrix) || defined(__ultrix__) || (defined(unix) && defined(vax))
 #undef __has_ultrix__
