@@ -42,7 +42,7 @@
 #define __has_haiku__ 0
 /* No HI-UX MPP */
 #define __has_hiux_mpp__ 0
-/* No HP-US */
+/* No HP-UX */
 #define __has_hpux__ 0
 /* No IBM OS/400 */
 #define __has_os_400__ 0
@@ -238,7 +238,7 @@
 #endif
 #if defined(_hpux) || defined(hpux) || defined(__hpux)
 #undef __has_hpux__
-/* Has HP-US */
+/* Has HP-UX */
 #define __has_hpux__ 1
 #endif
 #if defined(__OS400__) || defined(__OS400_TGTVRM__)
