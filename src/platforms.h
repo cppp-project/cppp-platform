@@ -56,8 +56,8 @@
 #define __has_linux__ 0
 /* No LynxOS */
 #define __has_lunx__ 0
-/* No MacOS */
-#define __has_mac_os__ 0
+/* No macOS */
+#define __has_macos__ 0
 /* No Microware OS-9 */
 #define __has_microware_os_9__ 0
 /* No MINIX */
@@ -272,9 +272,9 @@
 #define __has_lunx__ 1
 #endif
 #if defined(macintosh) || defined(Macintosh) || defined(__APPLE__) || defined(__MACH__)
-#undef __has_mac_os__
-/* Has MacOS */
-#define __has_mac_os__ 1
+#undef __has_macos__
+/* Has macOS */
+#define __has_macos__ 1
 #endif
 #if defined(__OS9000) || defined(_OSK)
 #undef __has_microware_os_9__
