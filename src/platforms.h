@@ -252,6 +252,7 @@
 #define __has_minix__ 1
 #endif
 #if defined(__MINGW32__) || defined(__MINGW64__)
+#undef __has_mingw__
 /* Has MinGW */
 #define __has_mingw__ 1
 #endif
